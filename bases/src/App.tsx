@@ -1,14 +1,15 @@
-import { useState } from 'react'
+import { Counter } from "./bases/Counter"
 
 
-
-function App() {
-  const [count, setCount] = useState(0)
+function App( ) {
+  
 
   return (
     <>
       <h1>React</h1>
       <hr/>
+      <Counter initialValue={ 15 } />
+
     </>
   )
 }
