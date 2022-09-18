@@ -4,9 +4,10 @@ interface Props {
     initialValue?: number
 }
 
+// ? se pone el "?" pra que sea opcional el enviar Props
 
 
-export const Counter = ( {initialValue }: Props ) => {
+export const Counter = ( {initialValue = 0 }: Props ) => {
 
     const [counter, setCounter] = useState(initialValue);
 
