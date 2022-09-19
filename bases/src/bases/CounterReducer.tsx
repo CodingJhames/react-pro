@@ -7,25 +7,46 @@ interface CounterState {
 }
 
 const initialState: CounterState = {
-    counter: 0,
-    previous: 0,
-    changes: 0,
+    counter: 10,
+    previous: 15,
+    changes: 20,
 };
+
+type CounterAction = 
+  | { type: 'IncreaseBy', payload: { value: number } }
+  | { type: 'reset' };
+
+const counterReducer = ( state: CounterState, action: CounterAction ): CounterState => {
+
+    switch (action.type) {
+      case 'reset':
+          return {
+            counter: 0,
+            previous: 0,
+            changes: 0,
+            }
+        break;
+    
+      default:
+        return state;
+    }
+}
 
 
 export const CounterReducerComponent = (  ) => {
 
-    const [state, dispatch] = useReducer( reducer ,initialState);
+    const [{counter}, dispatch] = useReducer( counterReducer ,initialState);
 
     const handleClick = ( ) => {
-        setCounter( prev => prev + 1 );
+        // setCounter( prev => prev + 1 );
+        dispatch( {type:'reset'} )
     }
 
   return (
     <>
         <h1>Counter Reducer: { counter }</h1>
         <button
-        onClick={ handleClick }>+ 1</button>
+        onClick={ handleClick }>Reset</button>
 
     </>
   )
