@@ -27,10 +27,10 @@ export const LazyLayout = () => {
             <Route path="lazy3" element={ <LazyPage3 /> } />
 
             {/* <Route path="*" element={ <div>Not Found</div> } /> */}
-            <Route path="*" element={ <Navigate replace to='lazy1' /> } />
+            <Route path="*" element={ <Navigate replace to='lazy1'/> } />
         </Routes>
     </div>
-  )
+    )
 }
 
 export default LazyLayout;
