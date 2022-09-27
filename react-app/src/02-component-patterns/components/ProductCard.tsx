@@ -1,6 +1,6 @@
 
 import useProduct from '../hooks/useProduct';
-import { createContext, ReactElement, useContext } from 'react';
+import { createContext } from 'react';
 import { ProductCardProps, ProductContextProps } from '../interfaces/interfaces';
 import styles from '../styles/styles.module.css'
 
