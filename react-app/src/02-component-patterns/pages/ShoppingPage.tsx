@@ -1,24 +1,14 @@
 import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components';
 import '../styles/custom-styles.css';
-import { useShoppingCart } from '../hooks/useShoppingcart';
+
 import { products } from '../data/products';
+import { useShoppingCart } from '../hooks/useShoppingcart';
 
 
 export const ShoppingPage = () => {
 
-  const { onProductCountChange, shoppingCart } = useShoppingCart();
+  const { shoppingCart, onProductCountChange } = useShoppingCart();
 
-      /* if( count === 0 ) {
-        const { [product.id]: toDelete, ...rest } = oldShoppingCart;
-        return {
-          ...rest
-        }
-      }
-      return {
-        ...oldShoppingCart,
-        [ product.id ]: {...product, count }
-      } */
-  
   /* const [shoppingCart, setShoppingCart] = useState({
     '1': { ...product1, count: 10 },
     '2': { ...product2, count: 10 },
