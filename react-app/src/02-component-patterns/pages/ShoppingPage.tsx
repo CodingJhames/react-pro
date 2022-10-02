@@ -1,37 +1,14 @@
 import { ProductCard, ProductImage, ProductTitle, ProductButtons } from '../components';
 import '../styles/custom-styles.css';
-import { Product } from '../interfaces/interfaces';
-import { useState } from 'react';
+import { useShoppingCart } from '../hooks/useShoppingcart';
+import { products } from '../data/products';
 
-
-const product1 = {
-    id: '1',
-    title: 'Coffee Mug - Card',
-    img: './coffee-mug.png'
-}
-
-const product2 = {
-    id: '2',
-      title: 'Coffee Mug - Meme',
-      img: './coffee-mug2.png'
-}
-
-const products: Product[] = [ product1, product2 ];
-
-interface ProducInCart extends Product {
-  count: number,
-}
 
 export const ShoppingPage = () => {
 
-  const [shoppingCart, setShoppingCart] = useState<{ [key:string]: ProducInCart}>({});
+  const { onProductCountChange, shoppingCart } = useShoppingCart();
 
-  const onProductCountChange = ( {count, product }: { count: number, product: Product } ) => {
-    // console.log('onProductCountChange', count, product );
-
-    setShoppingCart( oldShoppingCart => {
-
-      if( count === 0 ) {
+      /* if( count === 0 ) {
         const { [product.id]: toDelete, ...rest } = oldShoppingCart;
         return {
           ...rest
@@ -40,10 +17,8 @@ export const ShoppingPage = () => {
       return {
         ...oldShoppingCart,
         [ product.id ]: {...product, count }
-      }
-    } )
-  }
-
+      } */
+  
   /* const [shoppingCart, setShoppingCart] = useState({
     '1': { ...product1, count: 10 },
     '2': { ...product2, count: 10 },
@@ -122,11 +97,11 @@ export const ShoppingPage = () => {
               
         </div>
 
-        <div>
+        {/* <div>
           <code>
             { JSON.stringify( shoppingCart, null, 5 )}
           </code>
-        </div>
+        </div> */}
         
     </div>
   )
