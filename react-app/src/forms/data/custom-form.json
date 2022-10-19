@@ -1,0 +1,73 @@
+
+[
+    {
+        "type": "input",
+        "name": "firstName",
+        "placeholder": "James",
+        "label":"First Name",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            },
+            {
+                "type": "minLength"
+            }
+        ]
+    },
+    {
+        "type": "input",
+        "name": "lastName",
+        "placeholder": "Mejía",
+        "label":"Last Name",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            },
+            {
+                "type": "minLength"
+            }
+        ]
+    },
+    {
+        "type": "email",
+        "name": "email",
+        "placeholder": "james@google.com",
+        "label":"Email",
+        "value": "",
+        "validations": [
+            {
+                "type": "required"
+            },
+            {
+                "type": "email"
+            }
+        ]
+    },
+    {
+        "type": "select",
+        "name": "favoriteGame",
+        "label":"Favorite Game",
+        "value": "",
+        "options": [ {
+            "id": 1,
+            "label": "Super Smash"
+        },
+        {
+            "id": 2,
+            "label": "Zelda"
+        },
+        {
+            "id": 3,
+            "label": "Tactics Ogre"
+        } ],
+        "validations": [
+            {
+                "type": "required"
+            }
+        ]
+    }
+    
+    
+]

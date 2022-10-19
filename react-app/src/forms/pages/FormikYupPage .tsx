@@ -12,7 +12,6 @@ interface FormValues {
 export const FormikYupPage = () => {
 
     const {
-
         handleChange,values,handleSubmit,errors,
         touched,handleBlur,getFieldProps }= useFormik({
 
